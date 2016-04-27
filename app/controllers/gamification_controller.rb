@@ -1,9 +1,8 @@
 class GamificationController < ApplicationController
-	
 	def all
-		#render json: Gamification.all
 		@gamifications = Gamification.all
 	end
+<<<<<<< HEAD
 	
 	def show
 <<<<<<< HEAD
@@ -47,4 +46,6 @@ class GamificationController < ApplicationController
 		params.require(:gamification).permit(:name, :experience_points, :description)
 	end
 
+=======
+>>>>>>> c7ff44a... Achievement Controller
 end
