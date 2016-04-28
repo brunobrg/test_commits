@@ -1,12 +1,11 @@
 class QuestController < ApplicationController
 
 	def all
-		#render json: Gamification.all
-		@quests = Quest.all
+		render json: Quest.all
 	end
 
 	def show
-		@quest = Quest.find(params[:id])
+		render json: Quest.find(params[:id])
 	end
 
 	def new
@@ -23,18 +22,16 @@ class QuestController < ApplicationController
 	end
 
 	def edit
-<<<<<<< HEAD
-		@quest = Quest.find(params[:id])	
-=======
+
 		@quest = Quest.find(params[:id])
 		render 'edit'
->>>>>>> 95d32fa... Quest controller pronta com todos os métodos
 	end
 
 	def update
 		@quest = Quest.find(params[:id])
+
 		if @quest.update(quest_params)
-<<<<<<< HEAD
+
 			redirect_to @quest
 		else
 			render 'edit'
@@ -45,14 +42,14 @@ class QuestController < ApplicationController
 		id_quest = params[:id]
 		quests = Quest.where(id: id_quest)
 		quest = quests.first
-		redirect_to :quests_all
-=======
 			redirect_to :quests_all
-		else 
+		else
 			render 'edit'
 		end
 	end
-	
+<<<<<<< HEAD
+<<<<<<< HEAD
+
 	 def delete
 	 	id_quest = params[:id]
         quests = Quest.where(id: id_quest)
@@ -61,11 +58,15 @@ class QuestController < ApplicationController
         redirect_to :quests_all
 >>>>>>> 95d32fa... Quest controller pronta com todos os métodos
 	end
+=======
+
+>>>>>>> ea70791... Quest view to json
+=======
+
+>>>>>>> 7954c5534f9a0165a4f63dae8589f46c36c15ad4
 
 	private
 
 	def quest_params
 		params.require(:quest).permit(:name, :experience_points, :description)
 	end
-
-end
